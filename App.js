@@ -10,18 +10,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Tela1'>
-        <Stack.Screen name="Tela1" component={Tela1Screen} />
-        <Stack.Screen name="Tela2" component={Tela2Screen} />
+        <Stack.Screen name="Tela1" component={Tela1Screen} options={{headerShown: false}} />
+        {/* <Stack.Screen name="Tela2" component={Tela2Screen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+};
