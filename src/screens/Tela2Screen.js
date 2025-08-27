@@ -14,8 +14,11 @@ export default function Tela1({ navigation }) {
             <Text style={styles.acesse}>Acesse</Text>
             <Text style={styles.subtitulo}>com E-mail e senha</Text>
             <View style={styles.footer}>
-                <Text style={styles.textoLinha}>Ou continue com</Text>
-                <View style={styles.linha}></View>
+                <View style={styles.linhas}>
+                    <View style={styles.linhaDireita}/>
+                    <View style={styles.linhaEsquerda}/>
+                    <Text style={styles.textoLinha}> Ou continue com </Text>
+                </View>
                 <Image source={require("../../assets/Google.png")} style={styles.icone1} />
                 <Image source={require("../../assets/Facebook.png")} style={styles.icone2} />
             </View>
@@ -78,12 +81,26 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 300,
     },
-    linha: {
+    linhas: {
+        diplay: 'flex',
+        flexDirection: 'row',
+        justifyContent:"space-evenly",
+        alignItems: 'center',
+        
+    },
+    linhaDireita: {
         height: 1,
         backgroundColor: "#c2c2c2",
-        width: windowWidth * 0.75,
-        marginBottom: 150,
-        position:'absolute'
+        width: windowWidth * 0.30,
+        position:'absolute',
+        right: 0,
+    },
+    linhaEsquerda: {
+        height: 1,
+        backgroundColor: "#c2c2c2",
+        width: windowWidth * 0.30,
+        position:'absolute',
+        left: 0,
     },
     textoLinha: {
         fontSize: 12,
