@@ -3,18 +3,21 @@ import { View, Text, Button, StyleSheet, Dimensions, Image } from 'react-native'
 import Botao1 from '../components/Botao1';
 import Botao2 from '../components/Botao2';
 import casual_dog from '../../assets/casual_dog.png';
+import iconeGoogle from '../../assets/Google.png';
 
 const windowWidth = Dimensions.get('window').width;
 
 export default function Tela1({ navigation }) {
     return (
         <View style={styles.container}>
+            <View style={styles.header}/>
             <Image source={require("../../assets/casual_dog.png")} style={styles.imagem} />
             <Text style={styles.titulo}>Ótimo dia!</Text>
             <Text style={styles.subtitulo}>Como deseja acessar?</Text>
             <View style={styles.containerBotao1}>
                 <Botao1
                     aoPressionar={() => navigation.navigate()}>
+                    <Image source={require("../../assets/Google.png")} style={styles.icone} />
                     <Text style={{ color: '#FFFFFF' }}>Como deseja acessar?</Text>
                 </Botao1>
             </View>
@@ -29,17 +32,24 @@ export default function Tela1({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    conatiner: {
+    container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#fefefe',
+        backgroundColor: '#f3f3f3',
+    },
+    header: {
+        backgroundColor: "#dbdbdb",
+        height: windowWidth * 0.1,
+        width: windowWidth * 1,
+        position:'absolute',
+        top: 0,
     },
     imagem: {
-        alignItems: 'center',
-        height: 310,
-        width: 380,
-        marginTop: 100,
+        resizeMode: 'contain',
+        height: windowWidth * 0.7,
+        width: windowWidth * 0.9,
+        marginTop: 80,
     },
     titulo: {
         fontSize: 30,
@@ -54,13 +64,21 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     containerBotao1: {
-        height: 50,
-        alignItems: 'center',
-        marginTop: 25,
-        backgroundColor: "#14c871",
+        flexDirection: 'row',
+        alignItem: 'center',
+        justifyContent: 'center',
+    },
+    icone: {
+        backgroundColor: "#ffffff",
+        borderRadius: 8,
+        height: 36,
+        width: 36,
+        resizeMode: 'contain',
+        marginRight: 20,
     },
     containerBotao2: {
-        height: 50,
-        alignItems: 'center',
+        flexDirection: 'row',
+        alignItem: 'center',
+        justifyContent: 'center',
     },
 });

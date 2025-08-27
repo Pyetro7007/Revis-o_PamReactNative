@@ -2,7 +2,7 @@ import { TouchableOpacity, StyleSheet } from "react-native";
 
 export default function Botao1({children, aoPressionar}){
     return(
-        <TouchableOpacity style={StyleSheet.botao1}onPress={aoPressionar}>
+        <TouchableOpacity style={styles.botao1}onPress={aoPressionar}>
             {children}
         </TouchableOpacity>
     );
@@ -10,10 +10,11 @@ export default function Botao1({children, aoPressionar}){
 
 const styles = StyleSheet.create({
     botao1: {
-        justifyContent:'center',
         alignItems: 'center',
-        borderRadius: 5,
-        height: 45,
+        marginTop: 25,
         backgroundColor: "#14c871",
+        paddingVertical: 20,
+        paddingHorizontal: 100,
+        borderRadius: 8,
     }
 });
