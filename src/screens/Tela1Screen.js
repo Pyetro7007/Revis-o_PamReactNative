@@ -15,8 +15,8 @@ export default function Tela1({ navigation }) {
             <Text style={styles.titulo}>Ótimo dia!</Text>
             <Text style={styles.subtitulo}>Como deseja acessar?</Text>
             <View style={styles.containerBotao1}>
-                <Botao1
-                    aoPressionar={() => navigation.navigate()}>
+                <Botao1 // Tela1 pra não passar pra outra tela
+                    aoPressionar={() => navigation.navigate('Tela1')}>
                     <Image source={require("../../assets/Google.png")} style={styles.icone} />
                     <Text style={{ color: '#FFFFFF' }}>Como deseja acessar?</Text>
                 </Botao1>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f3f3f3',
+        backgroundColor: '#fbfbfb',
     },
     header: {
         backgroundColor: "#dbdbdb",
@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         height: windowWidth * 0.7,
         width: windowWidth * 0.9,
-        marginTop: 80,
     },
     titulo: {
         fontSize: 30,
@@ -64,7 +63,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     containerBotao1: {
-        flexDirection: 'row',
         alignItem: 'center',
         justifyContent: 'center',
     },
@@ -80,5 +78,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItem: 'center',
         justifyContent: 'center',
+        marginBottom: 50,
     },
+    
 });

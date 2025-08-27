@@ -13,8 +13,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 25,
         backgroundColor: "#14c871",
-        paddingVertical: 20,
-        paddingHorizontal: 100,
+        paddingVertical: 13,
+        paddingHorizontal: 75,
         borderRadius: 8,
+        flexDirection: 'row',
     }
 });

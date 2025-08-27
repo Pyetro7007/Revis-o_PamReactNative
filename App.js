@@ -11,7 +11,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Tela1'>
         <Stack.Screen name="Tela1" component={Tela1Screen} options={{headerShown: false}} />
-        {/* <Stack.Screen name="Tela2" component={Tela2Screen} /> */}
+        <Stack.Screen name="Tela2" component={Tela2Screen} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
