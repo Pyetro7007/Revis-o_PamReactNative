@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, Dimensions, Image } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image } from 'react-native';
 import Botao1 from '../components/Botao1';
 import Botao2 from '../components/Botao2';
 import casual_dog from '../../assets/casual_dog.png';
@@ -80,5 +80,4 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginBottom: 50,
     },
-    
 });

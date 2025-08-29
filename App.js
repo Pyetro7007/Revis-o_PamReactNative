@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Tela1'>
+      <Stack.Navigator initialRouteName="Tela1">
         <Stack.Screen name="Tela1" component={Tela1Screen} options={{headerShown: false}} />
         <Stack.Screen name="Tela2" component={Tela2Screen} options={{headerShown: false}} />
       </Stack.Navigator>
