@@ -1,22 +1,42 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, Dimensions, Image } from 'react-native';
+import { View, Text, Button, StyleSheet, Dimensions, Image, TextInput } from 'react-native';
 import Botao1 from '../components/Botao1';
 import Botao2 from '../components/Botao2';
 import iconeGoogle from '../../assets/Google.png';
 import iconeFacebook from '../../assets/Facebook.png';
+import BotaoVoltar from '../components/BotaoVoltar';
 
 const windowWidth = Dimensions.get('window').width;
 
 export default function Tela1({ navigation }) {
     return (
         <View style={styles.container}>
-            <View style={styles.header}/>
+            <View style={styles.header} />
+            <View style={styles.containerBotaoVoltar}>
+                <BotaoVoltar
+                    aoPressionar={() => navigation.navigate('Tela1')}>
+                    <Text style={{ color: '#14c871', fontSize: 48}}>{"<"}</Text>
+                </BotaoVoltar>
+            </View>
             <Text style={styles.acesse}>Acesse</Text>
             <Text style={styles.subtitulo}>com E-mail e senha</Text>
+            
+            <View style={styles.containerEmail}>
+            <Text style={styles.tituloEmail}>E-mail</Text>
+                <TextInput style={styles.email}
+                    placeholder='Digite seu E-mail'>
+                </TextInput>
+            </View>
+            <Text style={styles.tituloSenha}>Senha</Text>
+            <View style={styles.containerEmail}>
+                <TextInput style={styles.email}
+                    placeholder='Digite sua senha'>
+                </TextInput>
+            </View>
             <View style={styles.footer}>
                 <View style={styles.linhas}>
-                    <View style={styles.linhaDireita}/>
-                    <View style={styles.linhaEsquerda}/>
+                    <View style={styles.linhaDireita} />
+                    <View style={styles.linhaEsquerda} />
                     <Text style={styles.textoLinha}> Ou continue com </Text>
                 </View>
                 <Image source={require("../../assets/Google.png")} style={styles.icone1} />
@@ -24,7 +44,7 @@ export default function Tela1({ navigation }) {
             </View>
         </View>
     );
-}
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -37,7 +57,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#dbdbdb",
         height: windowWidth * 0.1,
         width: windowWidth * 1,
-        position:'absolute',
+        position: 'absolute',
         top: 0,
     },
     imagem: {
@@ -50,9 +70,9 @@ const styles = StyleSheet.create({
         fontSize: 30,
         color: "#2e3e4b",
         textAlign: 'center',
-        marginTop: 50,
+        marginTop: 90,
         marginLeft: 30,
-        position:'absolute',
+        position: 'absolute',
         left: 0,
         top: 0,
     },
@@ -60,20 +80,40 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color: "#2e3e4b",
         textAlign: 'center',
-        marginTop: 90,
+        marginTop: 130,
         marginLeft: 30,
-        position:'absolute',
+        position: 'absolute',
         left: 0,
         top: 0,
     },
-    containerBotao1: {
-        alignItem: 'center',
-        justifyContent: 'center',
+    containerBotaoVoltar: {
+        fontSize: 30,
+        color: "#2e3e4b",
+        textAlign: 'center',
+        marginTop: 30,
+        marginLeft: 30,
+        position: 'absolute',
+        left: 0,
+        top: 0,
     },
-    containerBotao2: {
-        flexDirection: 'row',
-        alignItem: 'center',
+    tituloEmail: {
+        fontSize: 12,
+        color: "#2e3e4b",
+        textAlign: 'center',
+        position: 'absolute',
+        display: 'flex',
+        top: 0,
+        left: 0,
+    },
+    containerEmail: {
+        backgroundColor: '#E3E7F3',
+        paddingVertical: 15,
         justifyContent: 'center',
+        width: windowWidth * 0.9,
+        marginTop: 20,
+    },
+    email: {
+
     },
     footer: {
         position: 'absolute',
@@ -84,28 +124,28 @@ const styles = StyleSheet.create({
     linhas: {
         diplay: 'flex',
         flexDirection: 'row',
-        justifyContent:"space-evenly",
+        justifyContent: "space-evenly",
         alignItems: 'center',
-        
+
     },
     linhaDireita: {
         height: 1,
         backgroundColor: "#c2c2c2",
         width: windowWidth * 0.30,
-        position:'absolute',
+        position: 'absolute',
         right: 0,
     },
     linhaEsquerda: {
         height: 1,
         backgroundColor: "#c2c2c2",
         width: windowWidth * 0.30,
-        position:'absolute',
+        position: 'absolute',
         left: 0,
     },
     textoLinha: {
         fontSize: 12,
         textAlign: 'center',
-        position:'absolute',
+        position: 'absolute',
         backgroundColor: '#fbfbfb'
     },
     icone1: {
@@ -114,7 +154,7 @@ const styles = StyleSheet.create({
         height: 72,
         width: 72,
         resizeMode: 'contain',
-        position:'absolute',
+        position: 'absolute',
         right: 25,
         marginTop: 50,
     },
@@ -124,7 +164,7 @@ const styles = StyleSheet.create({
         height: 72,
         width: 72,
         resizeMode: 'contain',
-        position:'absolute',
+        position: 'absolute',
         left: 25,
         marginTop: 50,
     },
